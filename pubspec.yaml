@@ -38,8 +38,7 @@ dependencies:
   flutter_bloc: ^8.1.2
   get_it: ^7.2.0
   google_fonts: null
-  injectable: ^2.1.1
-  injectable_generator: ^2.1.5
+  injectable: ^1.5.3
   json_annotation: ^4.8.0
   json_serializable: ^6.6.1
 
@@ -54,6 +53,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.3.2
+  injectable_generator: ^1.5.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
