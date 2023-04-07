@@ -31,10 +31,15 @@ environment:
 dependencies:
   bordered_text: ^2.0.0
   cupertino_icons: ^1.0.2
+  dartz: ^0.10.1
+  dio: ^5.1.1
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.2
+  get_it: ^7.2.0
   google_fonts: null
+  injectable: ^2.1.1
+  injectable_generator: ^2.1.5
   json_annotation: ^4.8.0
   json_serializable: ^6.6.1
 
