@@ -7,14 +7,14 @@ import 'package:netflix_clone/presentation/new_and_hot.dart/new_and_hot.dart';
 import 'package:netflix_clone/presentation/search/screen_search.dart';
 
 class ScreenMianPage extends StatelessWidget {
-  const ScreenMianPage({super.key});
+   ScreenMianPage({super.key});
 
-  final pages = const [
-    Screenhome(),
-    ScreenNewAndHot(),
-    ScreenFastLaugh(),
+  final pages =  [
+    const Screenhome(),
+    const ScreenNewAndHot(),
+    const ScreenFastLaugh(),
     ScreenSearch(),
-    ScreenDownloads(),
+    const ScreenDownloads(),
   ];
 
   @override

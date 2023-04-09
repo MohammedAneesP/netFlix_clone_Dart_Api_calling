@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
               bodyText1: TextStyle(color: Colors.white),
               bodyText2: TextStyle(color: Colors.white),
             )),
-        home: const ScreenMianPage(),
+        home:  ScreenMianPage(),
         debugShowCheckedModeBanner: false,
       ),
     );

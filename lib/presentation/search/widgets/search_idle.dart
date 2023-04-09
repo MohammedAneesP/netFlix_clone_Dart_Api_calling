@@ -43,7 +43,7 @@ class SearchIdleWidget extends StatelessWidget {
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         final movie = state.idleList[index];
-                        return TopSearchTile(title: movie.title??"no title provided", imageUrl: movie.posterPath??"");
+                        return TopSearchTile(title: movie.title??"no title provided", imageUrl: '$imageAppendUrl${movie.posterPath}' );
                       },
                       separatorBuilder: (context, index) {
                         return kheight20;
@@ -82,9 +82,10 @@ class TopSearchTile extends StatelessWidget {
                 image: NetworkImage(
                   imageUrl,
                 ),
-                fit: BoxFit.cover),
+                fit: BoxFit.cover ),
           ),
         ),
+        kwidth,
          Expanded(
           child: Text(
             title,
