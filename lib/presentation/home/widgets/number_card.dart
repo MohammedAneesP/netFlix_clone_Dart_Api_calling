@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:netflix_clone/core/colors.dart';
 import 'package:netflix_clone/core/constants.dart';
 
-
 class NumberCard extends StatelessWidget {
   final int index;
   const NumberCard({super.key, required this.index});

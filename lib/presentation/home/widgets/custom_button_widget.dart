@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/core/colors.dart';
 
-
 class CustomButtonWidget extends StatelessWidget {
   final IconData icon;
   final String title;

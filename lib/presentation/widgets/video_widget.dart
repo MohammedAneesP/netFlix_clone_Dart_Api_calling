@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:netflix_clone/core/colors.dart';
 import 'package:netflix_clone/core/constants.dart';
 
-
-
 class VideoWidget extends StatelessWidget {
   const VideoWidget({
     Key? key,

@@ -12,7 +12,7 @@ class MainTitleCard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         MainTitle(title: title),
+        MainTitle(title: title),
         kheight,
         LimitedBox(
           maxHeight: 200,

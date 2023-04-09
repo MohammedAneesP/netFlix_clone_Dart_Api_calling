@@ -9,24 +9,26 @@ import 'package:netflix_clone/presentation/search/screen_search.dart';
 class ScreenMianPage extends StatelessWidget {
   const ScreenMianPage({super.key});
 
-   final pages = const[
+  final pages = const [
     Screenhome(),
     ScreenNewAndHot(),
     ScreenFastLaugh(),
     ScreenSearch(),
     ScreenDownloads(),
-   ];
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-     
+    return Scaffold(
       body: SafeArea(
-        child: ValueListenableBuilder(valueListenable: indexChangeNotifier, builder: (context, value, child) {
-          return pages[value];
-        },),
+        child: ValueListenableBuilder(
+          valueListenable: indexChangeNotifier,
+          builder: (context, value, child) {
+            return pages[value];
+          },
+        ),
       ),
-      bottomNavigationBar:const BottomNavigationWidget() ,
+      bottomNavigationBar: const BottomNavigationWidget(),
     );
   }
 }

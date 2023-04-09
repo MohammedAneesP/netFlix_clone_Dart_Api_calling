@@ -19,7 +19,7 @@ class Screenhome extends StatelessWidget {
         return NotificationListener<UserScrollNotification>(
           onNotification: (notification) {
             final ScrollDirection direction = notification.direction;
-           // print(direction);
+            // print(direction);
             if (direction == ScrollDirection.reverse) {
               scrollNotifier.value = false;
             } else if (direction == ScrollDirection.forward) {
@@ -45,7 +45,7 @@ class Screenhome extends StatelessWidget {
               ),
               scrollNotifier.value == true
                   ? AnimatedContainer(
-                    duration: const Duration(milliseconds: 1000),
+                      duration: const Duration(milliseconds: 1000),
                       height: 80,
                       color: Colors.black.withOpacity(0.3),
                       child: Column(
@@ -74,10 +74,19 @@ class Screenhome extends StatelessWidget {
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Text("TV shows",style: kTextStyles,),
-                              Text("Movies",style: kTextStyles,),
-                              Text("Categories",style: kTextStyles,),
+                            children: const [
+                              Text(
+                                "TV shows",
+                                style: kTextStyles,
+                              ),
+                              Text(
+                                "Movies",
+                                style: kTextStyles,
+                              ),
+                              Text(
+                                "Categories",
+                                style: kTextStyles,
+                              ),
                             ],
                           ),
                         ],

@@ -3,8 +3,6 @@ import 'package:netflix_clone/core/constants.dart';
 import 'package:netflix_clone/presentation/widgets/main_title.dart';
 import 'number_card.dart';
 
-
-
 class NumberTitleCard extends StatelessWidget {
   const NumberTitleCard({
     Key? key,

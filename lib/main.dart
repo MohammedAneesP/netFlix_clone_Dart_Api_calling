@@ -5,6 +5,7 @@ import 'package:netflix_clone/application/downloads/downloads_bloc.dart';
 import 'package:netflix_clone/core/colors.dart';
 import 'package:netflix_clone/presentation/main_page/screen_main_page.dart';
 
+import 'application/search/search_bloc.dart';
 import 'domain/core/di/injectible.dart';
 
 Future<void> main(List<String> args) async {
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => getIt<DownloadsBloc>()),
+         BlocProvider(create: (context) => getIt<SearchBloc>()),
       ],
       child: MaterialApp(
         title: "NetFlixDemo",

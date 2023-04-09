@@ -27,11 +27,11 @@ class VideoListItem extends StatelessWidget {
               children: [
                 //left Side
                 CircleAvatar(
-                  backgroundColor:Colors.black.withOpacity(0.5),
+                  backgroundColor: Colors.black.withOpacity(0.5),
                   radius: 30,
                   child: IconButton(
                     onPressed: () {},
-                    icon:const Icon(
+                    icon: const Icon(
                       Icons.volume_off_rounded,
                       color: kwhite,
                     ),
@@ -39,12 +39,14 @@ class VideoListItem extends StatelessWidget {
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: const[
+                  children: const [
                     Padding(
                       padding: EdgeInsets.symmetric(vertical: 10),
                       child: CircleAvatar(
                         radius: 30,
-                        backgroundImage:NetworkImage( "https://www.themoviedb.org/t/p/w220_and_h330_face/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",),
+                        backgroundImage: NetworkImage(
+                          "https://www.themoviedb.org/t/p/w220_and_h330_face/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+                        ),
                       ),
                     ),
                     VideoActionWidget(icon: Icons.emoji_emotions, title: "LOL"),

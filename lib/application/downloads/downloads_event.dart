@@ -1,6 +1,6 @@
 part of 'downloads_bloc.dart';
 
 @freezed
-class DownloadsEvent with _$DownloadsEvent{
+class DownloadsEvent with _$DownloadsEvent {
   const factory DownloadsEvent.getDownloadsImages() = _GetDownloadsImages;
 }

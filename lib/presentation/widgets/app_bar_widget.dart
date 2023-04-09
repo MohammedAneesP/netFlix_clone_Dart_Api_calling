@@ -12,10 +12,8 @@ class AppBarWidgets extends StatelessWidget {
         kwidth,
         Text(
           title,
-          style: GoogleFonts.montserrat(
-            fontSize: 30,
-            fontWeight: FontWeight.bold
-          ),
+          style:
+              GoogleFonts.montserrat(fontSize: 30, fontWeight: FontWeight.bold),
         ),
         const Spacer(),
         const Icon(

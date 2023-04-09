@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:netflix_clone/core/colors.dart';
 import 'package:netflix_clone/core/constants.dart';
@@ -22,7 +21,7 @@ class EveryonesWatchingWidget extends StatelessWidget {
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
-        ), 
+        ),
         kheight,
         const Text(
           "This hit sitcom follows the merry miadventures of six 20-something pals as navigate the pitfalls of work, life and love in 1990s Manhattan.",
@@ -33,7 +32,7 @@ class EveryonesWatchingWidget extends StatelessWidget {
         kheight,
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
-          children:const[
+          children: const [
             CustomButtonWidget(
               icon: Icons.share_rounded,
               title: 'Share',
@@ -46,7 +45,8 @@ class EveryonesWatchingWidget extends StatelessWidget {
               title: 'My List',
               iconSize: 25,
               textSize: 16,
-            ),kwidth,
+            ),
+            kwidth,
             CustomButtonWidget(
               icon: Icons.play_arrow_rounded,
               title: 'Play',
