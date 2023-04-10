@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -94,7 +93,7 @@ class Section2 extends StatelessWidget {
                         ),
                         DownloadImageWidget(
                           imageList:
-                              '$imageAppendUrl${state.downloads![0].posterPath}',
+                              '$imageAppendUrl${state.downloads[0].posterPath}',
                           margin: const EdgeInsets.only(
                             left: 200,
                             top: 65,
@@ -104,7 +103,7 @@ class Section2 extends StatelessWidget {
                         ),
                         DownloadImageWidget(
                           imageList:
-                              '$imageAppendUrl${state.downloads![1].posterPath}',
+                              '$imageAppendUrl${state.downloads[1].posterPath}',
                           margin: const EdgeInsets.only(
                             right: 200,
                             top: 65,
@@ -114,7 +113,7 @@ class Section2 extends StatelessWidget {
                         ),
                         DownloadImageWidget(
                           imageList:
-                              '$imageAppendUrl${state.downloads![2].posterPath}',
+                              '$imageAppendUrl${state.downloads[2].posterPath}',
                           radius: 8,
                           size: Size(size.width * 0.38, size.width * 0.58),
                           margin: const EdgeInsets.only(left: 0, top: 38),
