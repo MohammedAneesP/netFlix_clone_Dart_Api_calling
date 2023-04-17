@@ -1,11 +1,16 @@
 import 'package:bordered_text/bordered_text.dart';
 import 'package:flutter/material.dart';
-import 'package:netflix_clone/core/colors.dart';
 import 'package:netflix_clone/core/constants.dart';
 
-class NumberCard extends StatelessWidget {
+class NumberTitleCard extends StatelessWidget {
+  NumberTitleCard({
+    super.key,
+    required this.index,
+    required this.imageurl,
+  });
   final int index;
-  const NumberCard({super.key, required this.index});
+  int a = 1;
+  final String imageurl;
 
   @override
   Widget build(BuildContext context) {
@@ -13,45 +18,32 @@ class NumberCard extends StatelessWidget {
       children: [
         Row(
           children: [
-            const SizedBox(
-              width: 40,
-              height: 200,
-            ),
-            SizedBox(
-              child: Container(
-                width: 130,
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: kBorderRadius,
-                  image: const DecorationImage(
-                    image: NetworkImage(
-                      "https://www.themoviedb.org/t/p/w220_and_h330_face/qVdrYN8qu7xUtsdEFeGiIVIaYd.jpg",
-                    ),
-                    fit: BoxFit.cover,
-                  ),
+            numberCardSize,
+            Container(
+              width: 150,
+              height: 250,
+              decoration: BoxDecoration(
+                borderRadius: boredRadiusHome,
+                image: DecorationImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(imageurl),
                 ),
               ),
             ),
-            kwidth,
           ],
         ),
         Positioned(
           left: 10,
-          bottom: -18,
+          bottom: 10,
           child: BorderedText(
-            strokeWidth: 5.0,
-            strokeColor: kwhite,
+            strokeWidth: 10.0,
+            strokeColor: Colors.white,
             child: Text(
-              '${index + 1}',
-              style: const TextStyle(
-                color: kButtonBlackColor,
-                fontSize: 140,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.none,
-              ),
+              "${index + 1}",
+              style: numberCardIndex,
             ),
           ),
-        ),
+        )
       ],
     );
   }

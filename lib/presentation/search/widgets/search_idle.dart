@@ -2,59 +2,63 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:netflix_clone/application/search/search_bloc.dart';
-import 'package:netflix_clone/core/colors.dart';
 import 'package:netflix_clone/core/constants.dart';
-import 'package:netflix_clone/presentation/search/widgets/search_title.dart';
+import 'package:netflix_clone/presentation/search/widgets/title.dart';
 
-// const imgUrl =
-//     "https://www.themoviedb.org/t/p/w250_and_h141_face/oHrrgAPEKpz0S1ofQntiZNrmGrM.jpg";
+import '../../../core/colors/colors.dart';
+
+final imageList = [
+  'assets/horriimage1.jpg'
+      'assets/horriimage2.jpg'
+      'assets/horrimage3.jpg'
+      'assets/horriimage4.jpg'
+      'assets/horriimage5.jpg'
+      'assets/horriimage6.jpg'
+];
 
 class SearchIdleWidget extends StatelessWidget {
   const SearchIdleWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SearchTextTitle(
-              title: "Top Searches",
-            ),
-            kheight,
-            Expanded(
-              child: BlocBuilder<SearchBloc, SearchState>(
-                builder: (context, state) {
-                  if (state.loading) {
-                    return const Center(
-                      child: CircularProgressIndicator(),
-                    );
-                  } else if (state.isError) {
-                    return const Center(
-                      child: Text("error while getting data"),
-                    );
-                  } else if (state.idleList.isEmpty) {
-                    return const Center(
-                      child: Text("List is empty"),
-                    );
-                  }
-                  return ListView.separated(
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) {
-                        final movie = state.idleList[index];
-                        return TopSearchTile(title: movie.title??"no title provided", imageUrl: '$imageAppendUrl${movie.posterPath}' );
-                      },
-                      separatorBuilder: (context, index) {
-                        return kheight20;
-                      },
-                      itemCount: state.idleList.length);
-                },
-              ),
-            )
-          ],
-        ),
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SearchTextTiltle(title: "Top Searches"),
+        kHeight,
+        Expanded(
+          child: BlocBuilder<SearchBloc, SearchState>(
+            builder: (context, state) {
+              if (state.loading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              } else if (state.isError) {
+                return const Center(
+                  child: Text('Error Occured'),
+                );
+              } else if (state.idleList.isEmpty) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+
+              return ListView.separated(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    final movie = state.idleList[index];
+                    return TopSearchTile(
+                        imageUrl: '$imageAppendUrl${movie.posterPath}',
+                        title: movie.title ?? 'No Title Provided');
+                  },
+                  separatorBuilder: (context, index) {
+                    return kHeight20;
+                  },
+                  itemCount: state.idleList.length);
+            },
+          ),
+        )
+      ],
     );
   }
 }
@@ -64,8 +68,8 @@ class TopSearchTile extends StatelessWidget {
   final String imageUrl;
   const TopSearchTile({
     super.key,
-    required this.title,
     required this.imageUrl,
+    required this.title,
   });
 
   @override
@@ -74,32 +78,31 @@ class TopSearchTile extends StatelessWidget {
     return Row(
       children: [
         Container(
-          width: screenWidth * 0.35,
-          height: screenWidth * 0.2,
+          width: screenWidth * 0.40,
+          height: 95,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            image:  DecorationImage(
-                image: NetworkImage(
-                  imageUrl,
-                ),
-                fit: BoxFit.cover ),
-          ),
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                image: NetworkImage(imageUrl),
+              ),
+              borderRadius: BorderRadius.circular(5)),
         ),
-        kwidth,
-         Expanded(
+        kWidhth,
+        Expanded(
           child: Text(
             title,
-            style:const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: tileText,
           ),
         ),
         const CircleAvatar(
-          backgroundColor: kwhite,
+          backgroundColor: searchTrailCircle,
           radius: 25,
           child: CircleAvatar(
-            backgroundColor: kButtonBlackColor,
-            radius: 24,
+            backgroundColor: searchTrailInsideCircle,
+            radius: 23,
             child: Icon(
               CupertinoIcons.play_fill,
+              color: trailingColor,
             ),
           ),
         )

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_clone/core/colors.dart';
-import 'package:netflix_clone/core/constants.dart';
-import 'custom_button_widget.dart';
+
+import '../../../core/colors/colors.dart';
+import '../../../core/constants.dart';
+import 'button_widget.dart';
 
 class BackgroundCard extends StatelessWidget {
   const BackgroundCard({super.key});
@@ -13,9 +14,7 @@ class BackgroundCard extends StatelessWidget {
         Container(
           width: double.infinity,
           height: 600,
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: NetworkImage(kMainImage), fit: BoxFit.cover)),
+          decoration: homeMainImage,
         ),
         Positioned(
           bottom: 0,
@@ -26,32 +25,30 @@ class BackgroundCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                const CustomButtonWidget(icon: Icons.add, title: "My List"),
-                _playButton(),
-                const CustomButtonWidget(icon: Icons.info, title: "Info")
+                const CustomButtonWidget(icon: Icons.add, text: "My List"),
+                _PlayButton(),
+                // CustomButtonWidget(text: , icon: icon)
+                const CustomButtonWidget(text: "Info", icon: Icons.info)
               ],
             ),
           ),
-        ),
+        )
       ],
     );
   }
 
-  TextButton _playButton() {
+  TextButton _PlayButton() {
     return TextButton.icon(
       onPressed: () {},
-      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(kwhite)),
+      style: buttonPlayStyle,
       icon: const Icon(
-        Icons.play_arrow_rounded,
-        size: 25,
-        color: kButtonBlackColor,
+        Icons.play_arrow,
+        size: 30,
+        color: playTextColor,
       ),
-      label: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10),
-        child: Text(
-          "Play",
-          style: TextStyle(fontSize: 20, color: kButtonBlackColor),
-        ),
+      label: Text(
+        'Play',
+        style: playText,
       ),
     );
   }

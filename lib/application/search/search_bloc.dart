@@ -3,12 +3,13 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:netflix_clone/domain/core/failures/main_failure.dart';
-import 'package:netflix_clone/domain/downloads/i_downloads_repo.dart';
-import 'package:netflix_clone/domain/downloads/models/downloads.dart';
-import 'package:netflix_clone/domain/search/search_service.dart';
+import 'package:netflix_clone/doamin/core/failures/main_failure.dart';
+import 'package:netflix_clone/doamin/downloads/i_downloads_repo.dart';
+import 'package:netflix_clone/doamin/downloads/models/model_download.dart';
+import 'package:netflix_clone/doamin/search/search_service.dart';
 
-import '../../domain/search/models/search_response/search_response.dart';
+import '../../doamin/search/model/search_respo/search_response.dart';
+
 
 part 'search_event.dart';
 part 'search_state.dart';
@@ -47,7 +48,7 @@ idle state
       );
 
       // get trending
-      final _result = await _downloadService.getDownloadsImages();
+      final _result = await _downloadService.getDownloadImages();
       final _state = _result.fold((MainFailure f) {
         return const SearchState(
           searchResultList: [],
